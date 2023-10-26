@@ -296,6 +296,40 @@ The following activity diagram shows what happens when a user executes a new com
 
 <img src="diagrams/AddClientActivityDiagram.png" width="500" />
 
+### ListClient and ListLead feature
+
+### Implementation
+Step 1. The user launches the application for the first time. The AddressBook will be initialized.
+
+<p>Before any commands</p>
+
+Step 2 - addclient: The user executes addclient n/John Doe... command to add a person named John Doe as a client into the AddressBook. The addclient command calls Model#addClient(), causing the address book to be updated.
+
+<p>After addclient command</p>
+
+Step 3 - addlead: The user executes addlead n/Jane Smith... command to add a person named Jane Smith as a lead into the AddressBook. The addlead command calls Model#addLead(), causing the address book to be updated.
+
+After addlead command
+
+Step 4 - listclient: The user executes the listclient command to list all clients in the AddressBook. The listclient command calls Model#updateFilteredPersonList() with a predicate that filters clients. The filtered list of clients is displayed to the user.
+
+After listclient command
+
+Step 5 - listlead: The user executes the listlead command to list all leads in the AddressBook. The listlead command calls Model#updateFilteredPersonList() with a predicate that filters leads. The filtered list of leads is displayed to the user.
+
+After listlead command
+
+The sequence diagram below shows how the listclient and listlead operations work:
+
+ListClient/ListLead Sequence Diagram
+
+The activity diagram below illustrates the process when a user executes the listclient or listlead command:
+
+ListClient/ListLead Activity Diagram
+
+These diagrams provide a visual representation of how the listclient and listlead commands interact with the Model and update the filtered person list.
+
+
 ### \[Proposed\] Add Meeting Time feature
 
 #### Proposed Implementation
